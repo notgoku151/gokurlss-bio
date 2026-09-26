@@ -856,231 +856,116 @@ html, body {
 /* Laptops & Desktop Displays (min-width: 1024px) */
 @media (min-width: 1024px) {
   .banner-wrapper {
-    height: clamp(300px, 24vw, 420px);
+    height: clamp(240px, 18vw, 320px);
   }
   .profile-card {
-    margin-top: -100px;
+    margin-top: -65px;
   }
   .avatar-ring-container {
-    width: 190px;
-    height: 190px;
-    margin-bottom: 18px;
+    width: 130px;
+    height: 130px;
+    margin-bottom: 12px;
   }
   .avatar-img {
-    width: 174px;
-    height: 174px;
+    width: 120px;
+    height: 120px;
   }
   .verified-badge {
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
-    bottom: 6px;
-    right: 6px;
-  }
-  .display-name {
-    font-size: 54px;
-    letter-spacing: 3px;
-  }
-  .kanji {
-    font-size: 58px;
-  }
-  .mini-crown {
-    font-size: 32px;
-  }
-  .handle-pill {
-    font-size: 18px;
-    padding: 6px 20px;
-    margin-top: 6px;
-    border-radius: 28px;
-  }
-  .stats-row {
-    padding: 10px 26px;
-    gap: 14px;
-    margin-top: 18px;
-    border-radius: 32px;
-  }
-  .stat-pill {
-    font-size: 17px;
-  }
-  .stat-value {
-    font-size: 18px;
-  }
-  .bio-tagline {
-    font-size: 17px;
-    letter-spacing: 2px;
-    margin-top: 16px;
-  }
-  .rocket {
-    font-size: 18px;
-  }
-  .motto-strip {
-    font-size: 14px;
-    letter-spacing: 4px;
-    margin-top: 12px;
-  }
-  .links-section {
-    max-width: 920px;
-    gap: 18px;
-    padding: 20px 32px 40px 32px;
-  }
-  .link-card {
-    padding: 20px 28px;
-    gap: 20px;
-    border-radius: 22px;
-  }
-  .card-icon-wrap {
-    width: 64px;
-    height: 64px;
-    min-width: 64px;
-    font-size: 30px;
-    border-radius: 18px;
-  }
-  .icon-instagram i {
-    font-size: 32px;
-  }
-  .kick-svg {
     width: 28px;
     height: 28px;
+    font-size: 12px;
+    bottom: 3px;
+    right: 3px;
   }
-  .card-title {
+  .display-name {
+    font-size: 38px;
+    letter-spacing: 2.5px;
+  }
+  .kanji {
+    font-size: 40px;
+  }
+  .mini-crown {
     font-size: 22px;
   }
-  .card-subtitle {
-    font-size: 16px;
-  }
-  .card-arrow {
-    font-size: 20px;
-  }
-  .card-action-btn {
-    padding: 10px 20px;
+  .handle-pill {
     font-size: 14px;
+    padding: 4px 15px;
+    margin-top: 3px;
+  }
+  .stats-row {
+    padding: 7px 18px;
+    gap: 10px;
+    margin-top: 12px;
+    border-radius: 26px;
+  }
+  .stat-pill {
+    font-size: 13px;
+  }
+  .stat-value {
+    font-size: 14px;
+  }
+  .bio-tagline {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+  }
+  .rocket {
+    font-size: 14px;
+  }
+  .motto-strip {
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    margin-top: 7px;
+  }
+  .links-section {
+    max-width: clamp(520px, 44vw, 680px);
+    gap: 12px;
+    padding: 12px 24px 32px 24px;
+  }
+  .link-card {
+    padding: 14px 22px;
+    gap: 16px;
+    border-radius: 18px;
+  }
+  .card-icon-wrap {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    font-size: 24px;
     border-radius: 14px;
   }
-  .discord-tag-pill {
-    font-size: 15px;
-    padding: 3px 12px;
+  .icon-instagram i {
+    font-size: 25px;
   }
-  .copyright {
+  .kick-svg {
+    width: 21px;
+    height: 21px;
+  }
+  .card-title {
+    font-size: 17px;
+  }
+  .card-subtitle {
+    font-size: 13px;
+  }
+  .card-arrow {
     font-size: 16px;
   }
-  .sub-copyright {
+  .card-action-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+    border-radius: 12px;
+  }
+  .discord-tag-pill {
+    font-size: 12px;
+    padding: 2px 10px;
+  }
+  .copyright {
     font-size: 13px;
+  }
+  .sub-copyright {
+    font-size: 11px;
   }
 }
 
-/* Wide & Ultrawide Desktop Displays (min-width: 1440px) */
-@media (min-width: 1440px) {
-  .banner-wrapper {
-    height: clamp(380px, 25vw, 480px);
-  }
-  .profile-card {
-    margin-top: -125px;
-  }
-  .avatar-ring-container {
-    width: 240px;
-    height: 240px;
-    margin-bottom: 22px;
-  }
-  .avatar-img {
-    width: 220px;
-    height: 220px;
-  }
-  .verified-badge {
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
-    bottom: 8px;
-    right: 8px;
-  }
-  .display-name {
-    font-size: 68px;
-    letter-spacing: 4px;
-  }
-  .kanji {
-    font-size: 74px;
-  }
-  .mini-crown {
-    font-size: 42px;
-  }
-  .handle-pill {
-    font-size: 22px;
-    padding: 8px 28px;
-    border-radius: 32px;
-    margin-top: 8px;
-  }
-  .stats-row {
-    padding: 12px 32px;
-    gap: 18px;
-    margin-top: 22px;
-    border-radius: 36px;
-  }
-  .stat-pill {
-    font-size: 20px;
-  }
-  .stat-value {
-    font-size: 21px;
-  }
-  .bio-tagline {
-    font-size: 20px;
-    letter-spacing: 2.5px;
-    margin-top: 20px;
-  }
-  .rocket {
-    font-size: 22px;
-  }
-  .motto-strip {
-    font-size: 16px;
-    letter-spacing: 5px;
-    margin-top: 14px;
-  }
-  .links-section {
-    max-width: 1060px;
-    gap: 22px;
-    padding: 24px 32px 50px 32px;
-  }
-  .link-card {
-    padding: 24px 36px;
-    gap: 24px;
-    border-radius: 26px;
-  }
-  .card-icon-wrap {
-    width: 74px;
-    height: 74px;
-    min-width: 74px;
-    font-size: 36px;
-    border-radius: 20px;
-  }
-  .icon-instagram i {
-    font-size: 38px;
-  }
-  .kick-svg {
-    width: 34px;
-    height: 34px;
-  }
-  .card-title {
-    font-size: 26px;
-  }
-  .card-subtitle {
-    font-size: 17px;
-  }
-  .card-arrow {
-    font-size: 24px;
-  }
-  .card-action-btn {
-    padding: 12px 26px;
-    font-size: 16px;
-    border-radius: 16px;
-  }
-  .discord-tag-pill {
-    font-size: 16px;
-    padding: 4px 14px;
-  }
-  .copyright {
-    font-size: 18px;
-  }
-  .sub-copyright {
-    font-size: 14px;
-  }
-}
 
 
