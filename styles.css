@@ -515,21 +515,29 @@ html, body {
 
 /* Specific Platform Icon Themes */
 .icon-tiktok {
-  background: linear-gradient(135deg, #111 0%, #000 100%);
+  background: #000000;
   color: #fff;
-  border-color: rgba(37, 244, 238, 0.4);
-  box-shadow: 0 0 12px rgba(254, 44, 85, 0.35);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .icon-tiktok i {
   text-shadow: 
     -1.5px -1.5px 0 #25f4ee, 
     1.5px 1.5px 0 #fe2c55;
+  font-size: 21px;
 }
 
 .icon-instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  color: #fff;
-  box-shadow: 0 0 14px rgba(225, 48, 108, 0.45);
+  background: #000000;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.icon-instagram i {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 23px;
+  display: block;
 }
 
 .icon-youtube {
@@ -547,11 +555,14 @@ html, body {
 .icon-kick {
   background: #000000;
   color: #53FC18;
-  border-color: rgba(83, 252, 24, 0.4);
-  box-shadow: 0 0 14px rgba(83, 252, 24, 0.35);
+  border-color: rgba(83, 252, 24, 0.35);
+  box-shadow: 0 0 12px rgba(83, 252, 24, 0.25);
 }
 .kick-svg {
   fill: #53FC18;
+  width: 18px;
+  height: 18px;
+  display: block;
 }
 
 .icon-discord {
