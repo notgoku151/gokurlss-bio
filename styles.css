@@ -81,7 +81,7 @@ html, body {
   background: radial-gradient(circle, #8C6514 0%, #B8860B 50%, transparent 70%);
 }
 
-/* Mobile Phone Frame / Wrapper */
+/* Mobile Phone Frame / Dynamic Wrapper */
 .phone-wrapper {
   position: relative;
   z-index: 1;
@@ -90,34 +90,34 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 24px 12px calc(var(--safe-bottom) + 24px) 12px;
+  padding: clamp(16px, 3vw, 40px) clamp(10px, 2vw, 24px) calc(var(--safe-bottom) + clamp(16px, 3vw, 40px)) clamp(10px, 2vw, 24px);
 }
 
 .phone-shell {
   width: 100%;
-  max-width: 440px;
-  min-height: 90vh;
-  background: rgba(10, 10, 13, 0.88);
+  max-width: clamp(420px, 85vw, 780px);
+  min-height: 85vh;
+  background: rgba(10, 10, 13, 0.90);
   border: 1px solid var(--border-gold-subtle);
-  border-radius: 36px;
+  border-radius: clamp(24px, 4vw, 36px);
   box-shadow: 
     0 25px 60px -10px rgba(0, 0, 0, 0.85),
-    0 0 35px rgba(212, 175, 55, 0.12),
-    inset 0 1px 1px rgba(255, 235, 170, 0.25);
+    0 0 40px rgba(212, 175, 55, 0.15),
+    inset 0 1px 1px rgba(255, 235, 170, 0.28);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: box-shadow 0.4s ease;
+  transition: all 0.35s ease;
 }
 
 .phone-shell:hover {
   box-shadow: 
-    0 30px 70px -10px rgba(0, 0, 0, 0.95),
-    0 0 45px rgba(212, 175, 55, 0.22),
-    inset 0 1px 1px rgba(255, 235, 170, 0.35);
+    0 30px 75px -10px rgba(0, 0, 0, 0.95),
+    0 0 50px rgba(212, 175, 55, 0.25),
+    inset 0 1px 2px rgba(255, 235, 170, 0.38);
 }
 
 /* Top Nav Bar */
@@ -192,7 +192,7 @@ html, body {
 .banner-wrapper {
   position: relative;
   width: 100%;
-  height: 160px;
+  height: clamp(160px, 24vw, 280px);
   overflow: hidden;
   background: #000;
 }
@@ -435,8 +435,9 @@ html, body {
 .links-section {
   display: flex;
   flex-direction: column;
-  gap: 9px;
-  padding: 6px 14px 16px 14px;
+  gap: clamp(9px, 1.4vw, 13px);
+  padding: 8px clamp(14px, 3.5vw, 32px) 20px clamp(14px, 3.5vw, 32px);
+  width: 100%;
 }
 
 /* Link Card Base */
@@ -752,3 +753,58 @@ html, body {
     justify-content: center;
   }
 }
+
+/* Tablet & iPad Enhancements (min-width: 600px) */
+@media (min-width: 600px) {
+  .display-name {
+    font-size: 30px;
+  }
+  .kanji {
+    font-size: 32px;
+  }
+  .avatar-ring-container {
+    width: 108px;
+    height: 108px;
+  }
+  .avatar-img {
+    width: 98px;
+    height: 98px;
+  }
+  .link-card {
+    padding: 13px 18px;
+    gap: 16px;
+    border-radius: 18px;
+  }
+  .card-icon-wrap {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    font-size: 22px;
+  }
+  .card-title {
+    font-size: 16px;
+  }
+  .card-subtitle {
+    font-size: 13px;
+  }
+}
+
+/* Laptops & Wide Desktop Displays (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .phone-shell {
+    max-width: 820px;
+  }
+  .display-name {
+    font-size: 34px;
+  }
+  .kanji {
+    font-size: 36px;
+  }
+  .banner-wrapper {
+    height: clamp(230px, 20vw, 300px);
+  }
+  .link-card {
+    padding: 14px 22px;
+  }
+}
+
