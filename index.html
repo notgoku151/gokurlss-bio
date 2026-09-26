@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>GØKÛ 悟 | @gokurlss Links</title>
+  <meta name="description" content="Official links for GØKÛ 悟 (@gokurlss) - TikTok, Instagram, YouTube, Twitch, Kick, Discord. 王者 👑 • 1764 MMR • SIDESWIPE.">
+  <meta name="theme-color" content="#08080a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GØKÛ 悟 | @gokurlss">
+  <meta property="og:description" content="王者 👑 • 1764 MMR • SIDESWIPE • DM FOR COACHING / BOOSTING 🚀">
+  <meta property="og:image" content="assets/banner.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/pfp.png">
+  <link rel="apple-touch-icon" href="assets/pfp.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@700;800;900&family=Noto+Serif+JP:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Animated Gold Ember Canvas -->
+  <canvas id="ember-canvas"></canvas>
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
+
+  <!-- Main Mobile Container -->
+  <main class="phone-wrapper">
+    <div class="phone-shell">
+
+      <!-- Top Action Bar -->
+      <header class="top-nav">
+        <div class="status-indicator">
+          <span class="pulse-dot"></span>
+          <span class="status-text">ONLINE</span>
+        </div>
+        <button id="shareBtn" class="nav-action-btn" title="Share Bio" aria-label="Share">
+          <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        </button>
+      </header>
+
+      <!-- Banner Container -->
+      <div class="banner-wrapper">
+        <img src="assets/banner.png" alt="GØKÛ Banner" class="banner-img">
+        <div class="banner-overlay"></div>
+      </div>
+
+      <!-- Profile Section -->
+      <section class="profile-card">
+        <div class="avatar-ring-container">
+          <div class="avatar-glow-ring"></div>
+          <div class="avatar-glow-ring ring-secondary"></div>
+          <img src="assets/pfp.png" alt="GØKÛ PFP" class="avatar-img">
+          <div class="verified-badge" title="Verified Champion">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+        </div>
+
+        <div class="profile-identity">
+          <div class="name-crown-wrap">
+            <span class="mini-crown">👑</span>
+            <h1 class="display-name">GØKÛ <span class="kanji">悟</span></h1>
+          </div>
+          <div class="handle-pill">
+            <span class="handle-at">@</span>gokurlss
+          </div>
+        </div>
+
+        <!-- Badges / Stats -->
+        <div class="stats-row">
+          <div class="stat-pill highlight">
+            <span class="stat-icon">👑</span>
+            <span class="stat-text">王者</span>
+          </div>
+          <div class="stat-divider">•</div>
+          <div class="stat-pill">
+            <span class="stat-value">1764</span>
+            <span class="stat-label">MMR</span>
+          </div>
+          <div class="stat-divider">•</div>
+          <div class="stat-pill">
+            <span class="stat-text">SIDESWIPE</span>
+          </div>
+        </div>
+
+        <p class="bio-tagline">
+          <span>DM FOR COACHING / BOOSTING</span>
+          <span class="rocket">🚀</span>
+        </p>
+
+        <div class="motto-strip">
+          <span>I . A M . I N E V I T A B L E</span>
+          <span class="motto-crown">👑</span>
+        </div>
+      </section>
+
+      <!-- Quick Action Cards Section -->
+      <section class="links-section" aria-label="Social Links">
+
+        <!-- 1. TikTok -->
+        <a href="https://www.tiktok.com/@gokurlss" target="_blank" rel="noopener noreferrer" class="link-card card-tiktok" data-platform="tiktok">
+          <div class="card-glow"></div>
+          <div class="card-icon-wrap icon-tiktok">
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+          <div class="card-content">
+            <span class="card-title">TikTok</span>
+            <span class="card-subtitle">@gokurlss • Clips & Highlights</span>
+          </div>
+          <div class="card-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </a>
+
+        <!-- 2. Instagram -->
+        <a href="https://www.instagram.com/gokurlss/" target="_blank" rel="noopener noreferrer" class="link-card card-instagram" data-platform="instagram">
+          <div class="card-glow"></div>
+          <div class="card-icon-wrap icon-instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <div class="card-content">
+            <span class="card-title">Instagram</span>
+            <span class="card-subtitle">@gokurlss • Daily Updates & DMs</span>
+          </div>
+          <div class="card-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </a>
+
+        <!-- 3. YouTube -->
+        <a href="https://www.youtube.com/@gokurlss" target="_blank" rel="noopener noreferrer" class="link-card card-youtube" data-platform="youtube">
+          <div class="card-glow"></div>
+          <div class="card-icon-wrap icon-youtube">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <div class="card-content">
+            <span class="card-title">YouTube</span>
+            <span class="card-subtitle">@gokurlss • Montages & Guides</span>
+          </div>
+          <div class="card-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </a>
+
+        <!-- 4. Twitch -->
+        <a href="https://www.twitch.tv/gokurlss" target="_blank" rel="noopener noreferrer" class="link-card card-twitch" data-platform="twitch">
+          <div class="card-glow"></div>
+          <div class="card-icon-wrap icon-twitch">
+            <i class="fa-brands fa-twitch"></i>
+          </div>
+          <div class="card-content">
+            <span class="card-title">Twitch</span>
+            <span class="card-subtitle">gokurlss • Live Streams & Ranked</span>
+          </div>
+          <div class="card-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </a>
+
+        <!-- 5. Kick -->
+        <a href="https://kick.com/gokurlss" target="_blank" rel="noopener noreferrer" class="link-card card-kick" data-platform="kick">
+          <div class="card-glow"></div>
+          <div class="card-icon-wrap icon-kick">
+            <svg class="kick-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M2.5 2.5h5.3v6.2h2.4V4.9h5.3v4.7H13.1v2.8h2.4v4.7h-5.3v-3.8H7.8v6.2H2.5V2.5z"/>
+            </svg>
+          </div>
+          <div class="card-content">
+            <span class="card-title">Kick</span>
+            <span class="card-subtitle">gokurlss • Unfiltered Streams</span>
+          </div>
+          <div class="card-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </a>
+
+        <!-- 6. Discord -->
+        <div class="link-card card-discord" id="discordCard" role="button" tabindex="0" data-platform="discord" data-discord-user="prokiller_151">
+          <div class="card-glow"></div>
+          <div class="card-icon-wrap icon-discord">
+            <i class="fa-brands fa-discord"></i>
+          </div>
+          <div class="card-content">
+            <div class="discord-header">
+              <span class="card-title">Discord</span>
+              <span class="discord-tag-pill">prokiller_151</span>
+            </div>
+            <span class="card-subtitle">Tap to Copy Username & Add Friend</span>
+          </div>
+          <button class="card-action-btn" id="copyDiscordBtn" title="Copy Discord Username" aria-label="Copy username">
+            <i class="fa-regular fa-copy"></i>
+            <span class="btn-label">COPY</span>
+          </button>
+        </div>
+
+      </section>
+
+      <!-- Footer -->
+      <footer class="phone-footer">
+        <div class="footer-gold-divider"></div>
+        <p class="copyright">
+          <span>👑 GØKÛ 悟</span> • <span>@gokurlss</span>
+        </p>
+        <p class="sub-copyright">All Rights Reserved • 2026</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- Interactive Toast Notification -->
+  <div id="toast" class="toast">
+    <div class="toast-icon">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <div class="toast-message" id="toastMessage">Copied to clipboard!</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
