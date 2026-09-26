@@ -81,27 +81,29 @@ html, body {
   background: radial-gradient(circle, #8C6514 0%, #B8860B 50%, transparent 70%);
 }
 
-/* Mobile Phone Frame / Dynamic Wrapper */
+/* Full Screen Frame / Dynamic Wrapper */
 .phone-wrapper {
   position: relative;
   z-index: 1;
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: clamp(16px, 3vw, 40px) clamp(10px, 2vw, 24px) calc(var(--safe-bottom) + clamp(16px, 3vw, 40px)) clamp(10px, 2vw, 24px);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: clamp(6px, 1vw, 14px);
+  box-sizing: border-box;
 }
 
 .phone-shell {
   width: 100%;
-  max-width: clamp(420px, 85vw, 780px);
-  min-height: 85vh;
+  max-width: 100%;
+  min-height: calc(100vh - clamp(12px, 2vw, 28px));
   background: rgba(10, 10, 13, 0.90);
   border: 1px solid var(--border-gold-subtle);
-  border-radius: clamp(24px, 4vw, 36px);
+  border-radius: clamp(14px, 1.8vw, 24px);
   box-shadow: 
-    0 25px 60px -10px rgba(0, 0, 0, 0.85),
+    0 10px 40px rgba(0, 0, 0, 0.8),
     0 0 40px rgba(212, 175, 55, 0.15),
     inset 0 1px 1px rgba(255, 235, 170, 0.28);
   backdrop-filter: blur(24px);
@@ -438,6 +440,8 @@ html, body {
   gap: clamp(9px, 1.4vw, 13px);
   padding: 8px clamp(14px, 3.5vw, 32px) 20px clamp(14px, 3.5vw, 32px);
   width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 /* Link Card Base */
@@ -802,9 +806,6 @@ html, body {
 
 /* Laptops & Wide Desktop Displays (min-width: 1024px) */
 @media (min-width: 1024px) {
-  .phone-shell {
-    max-width: 820px;
-  }
   .display-name {
     font-size: 34px;
   }
@@ -812,7 +813,7 @@ html, body {
     font-size: 36px;
   }
   .banner-wrapper {
-    height: clamp(230px, 20vw, 300px);
+    height: clamp(240px, 22vw, 380px);
   }
   .link-card {
     padding: 14px 22px;
