@@ -2,190 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>GØKÛ 悟 | @gokurlss Links</title>
-  <meta name="description" content="Official links for GØKÛ 悟 (@gokurlss) - TikTok, Instagram, YouTube, Twitch, Kick, Discord. 王者 👑 • 1764 MMR • SIDESWIPE.">
-  <meta name="theme-color" content="#08080a">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-  <!-- Open Graph / Meta -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="GØKÛ 悟 | @gokurlss">
-  <meta property="og:description" content="王者 👑 • 1764 MMR • SIDESWIPE • DM FOR COACHING / BOOSTING 🚀">
-  <meta property="og:image" content="assets/banner.png">
-
-  <!-- Favicon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080705">
+  <meta name="description" content="GØKÛ 悟 · 王者 👑 · 1764 MMR · Sideswipe. Watch the highlights and connect.">
+  <title>GØKÛ 悟 | @gokurlss</title>
   <link rel="icon" type="image/png" href="assets/pfp.png">
-  <link rel="apple-touch-icon" href="assets/pfp.png">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@700;800;900&family=Noto+Serif+JP:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <link rel="stylesheet" href="styles.css?v=8.0">
+  <meta property="og:title" content="GØKÛ 悟 | @gokurlss">
+  <meta property="og:description" content="王者 👑 · 1764 MMR · SIDESWIPE · DM FOR COACHING / BOOSTING 🚀">
+  <meta property="og:image" content="assets/banner.png">
+  <meta property="og:url" content="https://gokurlss.live">
+  <style>
+    :root { color-scheme: dark; --gold: #edc05f; --black: #080705; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--black); }
+    body { margin: 0; min-width: 280px; background: radial-gradient(ellipse at 50% 4%, #261705 0%, #080705 36%, #040403 100%); color: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .page { width: min(100%, 853px); margin: 0 auto; position: relative; overflow: hidden; isolation: isolate; box-shadow: 0 0 90px #000; animation: page-in 850ms cubic-bezier(.2,.75,.2,1) both; }
+    .design { display: block; width: 100%; height: auto; user-select: none; -webkit-user-drag: none; }
+    .action { position: absolute; display: block; border: 0; border-radius: 16%; background: transparent; color: transparent; cursor: pointer; touch-action: manipulation; text-decoration: none; -webkit-tap-highlight-color: transparent; transition: background .22s ease, box-shadow .22s ease, transform .22s ease; }
+    .action:hover { background: rgba(255,202,83,.065); box-shadow: inset 0 0 0 2px rgba(255,218,134,.7), 0 0 26px rgba(217,151,25,.24); transform: translateY(-2px); }
+    .action:active { transform: scale(.975); }
+    .action:focus-visible { outline: 3px solid #fff0ac; outline-offset: -4px; background: rgba(255,211,102,.10); }
+    .action.share { left: 87%; top: 1.2%; width: 9%; height: 3.7%; border-radius: 50%; }
+    .action.tiktok { left: 6.1%; top: 43.2%; width: 27.8%; height: 9.8%; }
+    .action.instagram { left: 36.0%; top: 43.2%; width: 28.0%; height: 9.8%; }
+    .action.youtube { left: 66.0%; top: 43.2%; width: 28.0%; height: 9.8%; }
+    .action.twitch { left: 6.1%; top: 54.1%; width: 27.8%; height: 9.7%; }
+    .action.kick { left: 36.0%; top: 54.1%; width: 28.0%; height: 9.7%; }
+    .action.discord { left: 66.0%; top: 54.1%; width: 28.0%; height: 9.7%; }
+    .action.featured { left: 5.5%; top: 67.2%; width: 89%; height: 13.5%; border-radius: 2.8%; }
+    .action.top-shot { left: 5.5%; top: 81.5%; width: 43.5%; height: 12.4%; border-radius: 4%; }
+    .action.last-second { left: 51%; top: 81.5%; width: 43.5%; height: 12.4%; border-radius: 4%; }
+    .status { position: fixed; z-index: 10; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translate(-50%, 22px); max-width: min(90vw, 420px); padding: 12px 18px; border: 1px solid rgba(237,192,95,.8); border-radius: 30px; background: rgba(13,11,8,.94); box-shadow: 0 10px 35px #000a; color: #ffe6a6; text-align: center; font-size: 14px; letter-spacing: .025em; opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; }
+    .status.visible { opacity: 1; transform: translate(-50%, 0); }
+    .light-sweep { position: absolute; pointer-events: none; inset: 0; background: linear-gradient(112deg, transparent 33%, rgba(255,212,115,.065) 49%, transparent 64%); background-size: 230% 100%; animation: sweep 9s ease-in-out 1.2s infinite; mix-blend-mode: screen; }
+    @keyframes page-in { from { opacity: 0; transform: translateY(14px); filter: brightness(.65); } to { opacity: 1; transform: translateY(0); filter: brightness(1); } }
+    @keyframes sweep { 0%, 75%, 100% { background-position: 100% 0; } 87% { background-position: -100% 0; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .page, .light-sweep { animation: none; } .action, .status { transition: none; } }
+  </style>
 </head>
 <body>
-
-  <!-- Background Animated Gold Ember Canvas -->
-  <canvas id="ember-canvas"></canvas>
-  <div class="ambient-glow glow-top"></div>
-  <div class="ambient-glow glow-bottom"></div>
-
-  <!-- Main Mobile Container -->
-  <main class="phone-wrapper">
-    <div class="phone-shell">
-
-      <!-- Top Action Bar -->
-      <header class="top-nav">
-        <div class="status-indicator">
-          <span class="pulse-dot"></span>
-          <span class="status-text">ONLINE</span>
-        </div>
-        <button id="shareBtn" class="nav-action-btn" title="Share Bio" aria-label="Share">
-          <i class="fa-solid fa-arrow-up-from-bracket"></i>
-        </button>
-      </header>
-
-      <!-- Banner Container -->
-      <div class="banner-wrapper">
-        <picture>
-          <source srcset="assets/banner.webp" type="image/webp">
-          <img src="assets/banner.jpg" alt="GØKÛ Banner" class="banner-img" fetchpriority="high">
-        </picture>
-        <div class="banner-overlay"></div>
-      </div>
-
-      <!-- Profile Section -->
-      <section class="profile-card">
-        <div class="avatar-ring-container">
-          <div class="avatar-glow-ring"></div>
-          <div class="avatar-glow-ring ring-secondary"></div>
-          <picture>
-            <source srcset="assets/pfp.webp" type="image/webp">
-            <img src="assets/pfp.jpg" alt="GØKÛ PFP" class="avatar-img" fetchpriority="high">
-          </picture>
-          <div class="verified-badge" title="Verified Champion">
-            <i class="fa-solid fa-crown"></i>
-          </div>
-        </div>
-
-        <div class="profile-identity">
-          <div class="name-crown-wrap">
-            <h1 class="display-name">GØKÛ <span class="kanji">悟</span></h1>
-          </div>
-          <div class="handle-pill">
-            <span class="handle-at">@</span>gokurlss
-          </div>
-        </div>
-
-        <!-- Badges / Stats -->
-        <div class="stats-row">
-          <div class="stat-pill highlight">
-            <span class="stat-icon">👑</span>
-            <span class="stat-text">王者</span>
-          </div>
-          <div class="stat-divider">•</div>
-          <div class="stat-pill">
-            <span class="stat-value">1764</span>
-            <span class="stat-label">MMR</span>
-          </div>
-          <div class="stat-divider">•</div>
-          <div class="stat-pill">
-            <span class="stat-text">SIDESWIPE</span>
-          </div>
-        </div>
-
-        <p class="bio-tagline">
-          <span>DM FOR COACHING / BOOSTING</span>
-          <span class="rocket">🚀</span>
-        </p>
-
-        <div class="motto-strip">
-          <span>I . A M . I N E V I T A B L E</span>
-          <span class="motto-crown">👑</span>
-        </div>
-      </section>
-
-      <!-- Social Icon Buttons Grid -->
-      <section class="links-section" aria-label="Social Links">
-
-        <!-- 1. TikTok -->
-        <a href="https://www.tiktok.com/@gokurlss" data-app-scheme="tiktok://user/profile/gokurlss" data-app-alt="snssdk1233://user/profile/gokurlss" target="_blank" rel="noopener noreferrer" class="link-card card-tiktok" data-platform="tiktok" title="TikTok (@gokurlss)" aria-label="TikTok">
-          <div class="card-glow"></div>
-          <div class="card-icon-wrap icon-tiktok">
-            <i class="fa-brands fa-tiktok"></i>
-          </div>
-        </a>
-
-        <!-- 2. Instagram -->
-        <a href="https://www.instagram.com/gokurlss/" data-app-scheme="instagram://user?username=gokurlss" target="_blank" rel="noopener noreferrer" class="link-card card-instagram" data-platform="instagram" title="Instagram (@gokurlss)" aria-label="Instagram">
-          <div class="card-glow"></div>
-          <div class="card-icon-wrap icon-instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </div>
-        </a>
-
-        <!-- 3. YouTube -->
-        <a href="https://www.youtube.com/@gokurlss" data-app-scheme="vnd.youtube://www.youtube.com/@gokurlss" target="_blank" rel="noopener noreferrer" class="link-card card-youtube" data-platform="youtube" title="YouTube (@gokurlss)" aria-label="YouTube">
-          <div class="card-glow"></div>
-          <div class="card-icon-wrap icon-youtube">
-            <i class="fa-brands fa-youtube"></i>
-          </div>
-        </a>
-
-        <!-- 4. Twitch -->
-        <a href="https://www.twitch.tv/gokurlss" data-app-scheme="twitch://stream/gokurlss" target="_blank" rel="noopener noreferrer" class="link-card card-twitch" data-platform="twitch" title="Twitch (gokurlss)" aria-label="Twitch">
-          <div class="card-glow"></div>
-          <div class="card-icon-wrap icon-twitch">
-            <i class="fa-brands fa-twitch"></i>
-          </div>
-        </a>
-
-        <!-- 5. Kick -->
-        <a href="https://kick.com/gokurlss" data-app-scheme="https://kick.com/gokurlss" target="_blank" rel="noopener noreferrer" class="link-card card-kick" data-platform="kick" title="Kick (gokurlss)" aria-label="Kick">
-          <div class="card-glow"></div>
-          <div class="card-icon-wrap icon-kick">
-            <svg class="kick-svg" role="img" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-              <path d="M1.333 0h8v5.333H12V2.667h2.667V0h8v8H20v2.667h-2.667v2.666H20V16h2.667v8h-8v-2.667H12v-2.666H9.333V24h-8Z"/>
-            </svg>
-          </div>
-        </a>
-
-        <!-- 6. Discord -->
-        <div class="link-card card-discord" id="discordCard" role="button" tabindex="0" data-platform="discord" data-discord-user="prokiller_151" title="Copy Discord: prokiller_151" aria-label="Discord">
-          <div class="card-glow"></div>
-          <div class="card-icon-wrap icon-discord">
-            <i class="fa-brands fa-discord"></i>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- Footer -->
-      <footer class="phone-footer">
-        <div class="footer-gold-divider"></div>
-        <p class="copyright">
-          <span>👑 GØKÛ 悟</span> • <span>@gokurlss</span>
-        </p>
-        <p class="sub-copyright">All Rights Reserved • 2026</p>
-      </footer>
-
-    </div>
+  <!-- Exact approved visual layout with responsive overlay hotspots -->
+  <main class="page" aria-label="GØKÛ 悟 profile and highlights">
+    <picture>
+      <source srcset="assets/design.webp" type="image/webp">
+      <img class="design" src="assets/design.png" width="853" height="1844" alt="GØKÛ 悟 (@gokurlss), 1764 MMR Sideswipe creator. Connect on TikTok, Instagram, YouTube, Twitch, Kick or Discord, and explore three featured clips." fetchpriority="high">
+    </picture>
+    <div class="light-sweep" aria-hidden="true"></div>
+    <button class="action share" type="button" data-share aria-label="Share this page"></button>
+    <a class="action tiktok" href="https://www.tiktok.com/@gokurlss" target="_blank" rel="noopener noreferrer" aria-label="Open GØKÛ on TikTok"></a>
+    <a class="action instagram" href="https://www.instagram.com/gokurlss/" target="_blank" rel="noopener noreferrer" data-link="instagram" aria-label="Open Instagram"></a>
+    <a class="action youtube" href="https://www.youtube.com/@gokurlss" target="_blank" rel="noopener noreferrer" data-link="youtube" aria-label="Open YouTube"></a>
+    <a class="action twitch" href="https://www.twitch.tv/gokurlss" target="_blank" rel="noopener noreferrer" data-link="twitch" aria-label="Open Twitch"></a>
+    <a class="action kick" href="https://kick.com/gokurlss" target="_blank" rel="noopener noreferrer" data-link="kick" aria-label="Open Kick"></a>
+    <a class="action discord" href="#" data-link="discord" aria-label="Copy Discord username and open Discord"></a>
+    <a class="action featured" href="#" data-clip="featured" aria-label="Watch featured clip: The Clutch"></a>
+    <a class="action top-shot" href="#" data-clip="topShot" aria-label="Watch clip: Top Shot"></a>
+    <a class="action last-second" href="#" data-clip="lastSecond" aria-label="Watch clip: Last Second"></a>
   </main>
+  <div class="status" id="status" role="status" aria-live="polite"></div>
+  <script>
+    /* Public URLs */
+    const SOCIAL_URLS = {
+      tiktok: 'https://www.tiktok.com/@gokurlss',
+      instagram: 'https://www.instagram.com/gokurlss/',
+      youtube: 'https://www.youtube.com/@gokurlss',
+      twitch: 'https://www.twitch.tv/gokurlss',
+      kick: 'https://kick.com/gokurlss',
+      discord: 'prokiller_151'
+    };
 
-  <!-- Interactive Toast Notification -->
-  <div id="toast" class="toast">
-    <div class="toast-icon">
-      <i class="fa-solid fa-check"></i>
-    </div>
-    <div class="toast-message" id="toastMessage">Copied to clipboard!</div>
-  </div>
+    /* Highlight Video Template URLs */
+    const CLIP_URLS = {
+      featured: '',
+      topShot: '',
+      lastSecond: ''
+    };
 
-  <script src="script.js?v=4.0"></script>
+    const status = document.getElementById('status');
+    let timer;
+
+    function notice(message) {
+      clearTimeout(timer);
+      status.textContent = message;
+      status.classList.add('visible');
+      timer = setTimeout(() => status.classList.remove('visible'), 3000);
+    }
+
+    function copyToClipboard(text) {
+      try {
+        const input = document.createElement('input');
+        input.setAttribute('readonly', '');
+        input.style.position = 'fixed';
+        input.style.left = '-9999px';
+        input.style.top = '0';
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        input.setSelectionRange(0, 99999);
+        document.execCommand('copy');
+        document.body.removeChild(input);
+      } catch (_) {}
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(() => {});
+      }
+    }
+
+    document.querySelectorAll('[data-link], [data-clip]').forEach(link => {
+      link.addEventListener('click', event => {
+        const category = link.dataset.link ? 'link' : 'clip';
+        const key = link.dataset.link || link.dataset.clip;
+
+        // Custom Discord handling: Instant copy + app launch
+        if (key === 'discord') {
+          event.preventDefault();
+          const username = SOCIAL_URLS.discord;
+          copyToClipboard(username);
+          notice(`Copied ${username} to clipboard! 🎮`);
+          const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+          setTimeout(() => {
+            if (isMobile) {
+              window.location.href = 'discord://';
+            } else {
+              window.open('https://discord.com/app', '_blank', 'noopener,noreferrer');
+            }
+          }, 350);
+          return;
+        }
+
+        const url = category === 'link' ? SOCIAL_URLS[key] : CLIP_URLS[key];
+        if (!url) {
+          event.preventDefault();
+          notice(category === 'clip' ? 'Clip coming soon 👑' : 'Link coming soon 👑');
+          return;
+        }
+
+        try {
+          const parsed = new URL(url, location.href);
+          if (!['http:', 'https:'].includes(parsed.protocol)) throw new Error('Invalid URL');
+          link.href = parsed.href;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+        } catch (_) {
+          event.preventDefault();
+          notice('Check this URL in the HTML file.');
+        }
+      });
+    });
+
+    document.querySelector('[data-share]').addEventListener('click', async () => {
+      const url = location.href;
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: 'GØKÛ 悟 | @gokurlss', url });
+        } else {
+          copyToClipboard(url);
+          notice('Link copied 👑');
+        }
+      } catch (error) {
+        if (error.name !== 'AbortError') {
+          copyToClipboard(url);
+          notice('Link copied 👑');
+        }
+      }
+    });
+  </script>
 </body>
 </html>
