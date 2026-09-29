@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080705">
+  <meta name="description" content="Choose a private Rocket League Sideswipe coaching session with GØKÛ 悟.">
+  <title>Grand Champion Coaching | GØKÛ 悟</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <style>
+    :root { color-scheme: dark; --black:#080705; --gold:#d9ab50; --light:#ffe6a6; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; background:var(--black); }
+    body { margin:0; min-height:100vh; color:#f8f2e5; font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; background:radial-gradient(ellipse at 50% -8%,#3a260e 0%,#141009 27%,#080705 59%); }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.17; background:repeating-linear-gradient(135deg,transparent 0 36px,#bc8e3833 37px,transparent 38px 76px); mask-image:linear-gradient(#000,transparent 60%); }
+    a { color:inherit; }
+    .shell { position:relative; width:min(100% - 36px,1050px); margin:auto; padding:24px 0 76px; }
+    .topbar { display:flex; align-items:center; gap:16px; }
+    .back { display:inline-flex; align-items:center; gap:9px; text-decoration:none; color:#d9c392; font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:10px 0; }
+    .back:hover,.back:focus-visible { color:#fff0bf; }
+    .hero { text-align:center; max-width:700px; margin:50px auto 40px; animation:rise .8s both; }
+    .gc-hero-logo { width:140px; height:140px; object-fit:contain; margin:0 auto 24px; display:block; filter:drop-shadow(0 0 25px rgba(217,171,80,0.35)); }
+    .logo-placeholder { display:grid; place-items:center; width:150px; height:150px; margin:0 auto 27px; padding:18px; border:1px dashed #716b60; border-radius:18px; color:#8f897d; background:#171512; font-size:11px; font-weight:700; line-height:1.5; letter-spacing:.14em; text-align:center; }
+    .eyebrow { display:flex; align-items:center; justify-content:center; gap:16px; margin:0 0 17px; color:var(--gold); font-size:11px; font-weight:800; letter-spacing:.27em; text-transform:uppercase; }
+    .eyebrow::before,.eyebrow::after { content:""; width:45px; height:1px; background:linear-gradient(90deg,transparent,#a2762f); }
+    .eyebrow::after { transform:rotate(180deg); }
+    h1 { margin:0; font-family:Georgia,"Times New Roman",serif; font-size:clamp(36px,7vw,72px); line-height:1.05; font-weight:700; letter-spacing:-.045em; color:#ffeab5; text-shadow:0 4px 29px #ae731e55; }
+    .hero-quote { position:relative; max-width:630px; margin:29px auto 0; padding:23px 26px 4px; border-top:1px solid #9d7735; color:#d8c7a3; font:italic clamp(17px,2.6vw,23px)/1.5 Georgia,"Times New Roman",serif; }
+    .hero-quote::before { content:"✦"; position:absolute; top:-13px; left:50%; padding:0 14px; transform:translateX(-50%); background:#17120a; color:#efc972; font-size:18px; font-style:normal; }
+    .section-title { display:flex; align-items:center; gap:18px; margin:45px 0 18px; color:#efd599; font-size:12px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; }
+    .section-title::after { content:""; height:1px; flex:1; background:linear-gradient(90deg,#a77e34,transparent); }
+    .options { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+    .card { position:relative; display:flex; flex-direction:column; min-height:330px; padding:28px; border:1px solid #775923; border-radius:20px; background:linear-gradient(155deg,#20170d 0%,#100d09 52%,#080807 100%); box-shadow:inset 0 1px #e8bf6030,0 16px 35px #0005; overflow:hidden; animation:rise .8s both; }
+    .card:nth-child(2) { animation-delay:.12s; } .card:nth-child(3) { animation-delay:.24s; }
+    .card::before { content:""; position:absolute; top:-60px; right:-40px; width:180px; height:180px; border:1px solid #bd8d3633; border-radius:50%; box-shadow:0 0 0 27px #bd8d3611,0 0 0 55px #bd8d360a; pointer-events:none; }
+    .card:hover { border-color:#edc76d; transform:translateY(-5px); box-shadow:inset 0 1px #e8bf6066,0 24px 40px #0009,0 0 25px #aa732225; }
+    .card,.checkout { transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease,background .24s ease; }
+    .number { color:#d9a747; font-family:Georgia,serif; font-size:68px; font-weight:700; line-height:.95; text-shadow:0 0 26px #d59b2a38; }
+    .unit { margin-top:8px; color:#ffedbd; font-size:13px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
+    .rule { width:100%; height:1px; margin:25px 0 20px; background:linear-gradient(90deg,#ad8438,transparent); }
+    .card h2 { margin:0 0 8px; color:#fff2d1; font:700 20px/1.2 Georgia,serif; }
+    .card p { margin:0 0 28px; color:#aead9f; line-height:1.5; font-size:13px; }
+    .checkout { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:auto; padding:15px 17px; border:1px solid #c59a4a; border-radius:10px; background:linear-gradient(90deg,#ad7e2e,#e7c36b,#b78932); color:#141006; text-decoration:none; font-size:13px; font-weight:900; letter-spacing:.09em; text-transform:uppercase; cursor:pointer; }
+    .checkout:hover,.checkout:focus-visible { background:linear-gradient(90deg,#f0cc78,#fff0b5,#e3b659); transform:translateY(-2px); box-shadow:0 0 22px #d8a64266; }
+    .checkout span:last-child { font-size:20px; line-height:.5; }
+    footer { margin-top:65px; padding-top:22px; border-top:1px solid #7b5c2e55; text-align:center; color:#8f7d5e; font-size:11px; letter-spacing:.18em; text-transform:uppercase; }
+    .toast { position:fixed; left:50%; bottom:max(20px,env(safe-area-inset-bottom)); z-index:5; width:max-content; max-width:90vw; padding:12px 17px; border:1px solid var(--gold); border-radius:999px; background:#151009f2; color:#ffe8ad; font-size:13px; text-align:center; box-shadow:0 10px 30px #0009; opacity:0; pointer-events:none; transform:translate(-50%,15px); transition:opacity .2s,transform .2s; }
+    .toast.show { opacity:1; transform:translate(-50%,0); }
+    @keyframes rise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+    @media(max-width:720px) { .options { grid-template-columns:1fr; } .card { min-height:255px; } .hero { margin-top:28px; } .section-title { margin-top:32px; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="topbar" aria-label="Page navigation">
+      <a class="back" href="index.html" aria-label="Back to GØKÛ profile"><span aria-hidden="true">←</span> Back to profile</a>
+    </nav>
+    <header class="hero">
+      <img src="assets/gc_logo.png" alt="Grand Champion Sideswipe Logo" class="gc-hero-logo">
+      <p class="eyebrow">Grand Champion Coaching</p>
+      <h1>Private coaching with GØKÛ.</h1>
+      <blockquote class="hero-quote">“What you master today becomes the standard the next generation chases.”</blockquote>
+    </header>
+    <div class="section-title">Choose your session</div>
+    <section class="options" aria-label="Coaching durations">
+      <article class="card">
+        <div class="number">01</div><div class="unit">Hour</div><div class="rule"></div>
+        <h2>1 hour coaching</h2><p>One private session focused on your game.</p>
+        <a class="checkout" href="#" data-plan="one" aria-label="Pay for 1 hour coaching through Stripe"><span>Choose 1 hour</span><span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="card">
+        <div class="number">02</div><div class="unit">Hours</div><div class="rule"></div>
+        <h2>2 hour coaching</h2><p>More time to work through your gameplay.</p>
+        <a class="checkout" href="#" data-plan="two" aria-label="Pay for 2 hour coaching through Stripe"><span>Choose 2 hours</span><span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="card">
+        <div class="number">04</div><div class="unit">Hours</div><div class="rule"></div>
+        <h2>4 hour coaching</h2><p>An extended private coaching block.</p>
+        <a class="checkout" href="#" data-plan="four" aria-label="Pay for 4 hour coaching through Stripe"><span>Choose 4 hours</span><span aria-hidden="true">↗</span></a>
+      </article>
+    </section>
+    <footer>I AM INEVITABLE 👑</footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    /* Paste the three LIVE Stripe Payment Link URLs here.
+       Create one Stripe Payment Link for each coaching duration.
+       Example shape: https://buy.stripe.com/your-real-link
+       Do not put Stripe secret keys in this public HTML file. */
+    const PAYMENT_LINKS = {
+      one: '',  // 1 hour
+      two: '',  // 2 hours
+      four: ''  // 4 hours
+    };
+    const toast = document.getElementById('toast');
+    let toastTimer;
+    function notify(message) {
+      clearTimeout(toastTimer);
+      toast.textContent = message;
+      toast.classList.add('show');
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+    }
+    document.querySelectorAll('[data-plan]').forEach(button => {
+      button.addEventListener('click', event => {
+        const url = PAYMENT_LINKS[button.dataset.plan]?.trim();
+        if (!url) { event.preventDefault(); notify('Stripe payment link coming soon 👑'); return; }
+        try {
+          const target = new URL(url);
+          if (target.protocol !== 'https:' || !/^(buy|checkout)\.stripe\.com$/.test(target.hostname)) throw new Error('Invalid Stripe link');
+          button.href = target.href;
+        } catch (_) { event.preventDefault(); notify('This Stripe link needs checking.'); }
+      });
+    });
+  </script>
+</body>
+</html>
