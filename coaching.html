@@ -1,156 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#080705">
-  <meta name="description" content="Choose a private Rocket League Sideswipe coaching session with GØKÛ 悟.">
-  <title>Grand Champion Coaching | GØKÛ 悟</title>
+  <meta name="theme-color" content="#070604">
+  <meta name="description" content="Private Sideswipe coaching. Choose a 1, 2, or 4 hour session.">
+  <title>Private Coaching · GØKÛ</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="assets/favicon.png">
   <style>
-    :root { color-scheme: dark; --black:#080705; --gold:#d9ab50; --light:#ffe6a6; }
+    :root { color-scheme:dark; --ink:#070604; --panel:#100d08; --gold:#ddaf49; --pale:#ffe7a5; --line:#c69635; --muted:#b8ac96; }
     * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; background:var(--black); }
-    body { margin:0; min-height:100vh; color:#f8f2e5; font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; background:radial-gradient(ellipse at 50% -8%,#3a260e 0%,#141009 27%,#080705 59%); }
-    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.17; background:repeating-linear-gradient(135deg,transparent 0 36px,#bc8e3833 37px,transparent 38px 76px); mask-image:linear-gradient(#000,transparent 60%); }
-    a { color:inherit; }
-    .shell { position:relative; width:min(100% - 36px,1050px); margin:auto; padding:24px 0 76px; }
-    .topbar { display:flex; align-items:center; gap:16px; }
-    .back { display:inline-flex; align-items:center; gap:9px; text-decoration:none; color:#d9c392; font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:10px 0; }
-    .back:hover,.back:focus-visible { color:#fff0bf; }
-    .hero { text-align:center; max-width:700px; margin:50px auto 40px; animation:rise .8s both; }
-    .gc-hero-logo { width:140px; height:140px; object-fit:contain; margin:0 auto 24px; display:block; filter:drop-shadow(0 0 25px rgba(217,171,80,0.35)); }
-    .logo-placeholder { display:grid; place-items:center; width:150px; height:150px; margin:0 auto 27px; padding:18px; border:1px dashed #716b60; border-radius:18px; color:#8f897d; background:#171512; font-size:11px; font-weight:700; line-height:1.5; letter-spacing:.14em; text-align:center; }
-    .eyebrow { display:flex; align-items:center; justify-content:center; gap:16px; margin:0 0 17px; color:var(--gold); font-size:11px; font-weight:800; letter-spacing:.27em; text-transform:uppercase; }
-    .eyebrow::before,.eyebrow::after { content:""; width:45px; height:1px; background:linear-gradient(90deg,transparent,#a2762f); }
-    .eyebrow::after { transform:rotate(180deg); }
-    h1 { margin:0; font-family:Georgia,"Times New Roman",serif; font-size:clamp(36px,7vw,72px); line-height:1.05; font-weight:700; letter-spacing:-.045em; color:#ffeab5; text-shadow:0 4px 29px #ae731e55; }
-    .hero-quote { position:relative; max-width:630px; margin:29px auto 0; padding:23px 26px 4px; border-top:1px solid #9d7735; color:#d8c7a3; font:italic clamp(17px,2.6vw,23px)/1.5 Georgia,"Times New Roman",serif; }
-    .hero-quote::before { content:"✦"; position:absolute; top:-13px; left:50%; padding:0 14px; transform:translateX(-50%); background:#17120a; color:#efc972; font-size:18px; font-style:normal; }
-    .section-title { display:flex; align-items:center; gap:18px; margin:45px 0 18px; color:#efd599; font-size:12px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; }
-    .section-title::after { content:""; height:1px; flex:1; background:linear-gradient(90deg,#a77e34,transparent); }
-    .options { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
-    .card { position:relative; display:flex; flex-direction:column; min-height:330px; padding:28px; border:1px solid #775923; border-radius:20px; background:linear-gradient(155deg,#20170d 0%,#100d09 52%,#080807 100%); box-shadow:inset 0 1px #e8bf6030,0 16px 35px #0005; overflow:hidden; animation:rise .8s both; }
-    .card:nth-child(2) { animation-delay:.12s; } .card:nth-child(3) { animation-delay:.24s; }
-    .card::before { content:""; position:absolute; top:-60px; right:-40px; width:180px; height:180px; border:1px solid #bd8d3633; border-radius:50%; box-shadow:0 0 0 27px #bd8d3611,0 0 0 55px #bd8d360a; pointer-events:none; }
-    .card:hover { border-color:#edc76d; transform:translateY(-5px); box-shadow:inset 0 1px #e8bf6066,0 24px 40px #0009,0 0 25px #aa732225; }
-    .card,.checkout { transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease,background .24s ease; }
-    .number { color:#d9a747; font-family:Georgia,serif; font-size:68px; font-weight:700; line-height:.95; text-shadow:0 0 26px #d59b2a38; }
-    .unit { margin-top:8px; color:#ffedbd; font-size:13px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
-    .rule { width:100%; height:1px; margin:25px 0 20px; background:linear-gradient(90deg,#ad8438,transparent); }
-    .card h2 { margin:0 0 6px; color:#fff2d1; font:700 20px/1.2 Georgia,serif; }
-    .price-tag { margin:0 0 12px; font-size:26px; font-weight:800; color:#ffebbe; font-family:Georgia,serif; text-shadow:0 0 18px rgba(217,171,80,0.45); }
-    .card p { margin:0 0 24px; color:#aead9f; line-height:1.5; font-size:13px; }
-    .checkout { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:auto; padding:15px 17px; border:1px solid #c59a4a; border-radius:10px; background:linear-gradient(90deg,#ad7e2e,#e7c36b,#b78932); color:#141006; text-decoration:none; font-size:13px; font-weight:900; letter-spacing:.09em; text-transform:uppercase; cursor:pointer; }
-    .checkout:hover,.checkout:focus-visible { background:linear-gradient(90deg,#f0cc78,#fff0b5,#e3b659); transform:translateY(-2px); box-shadow:0 0 22px #d8a64266; }
-    .checkout span:last-child { font-size:20px; line-height:.5; }
-    footer { margin-top:65px; padding-top:22px; border-top:1px solid #7b5c2e55; text-align:center; color:#8f7d5e; font-size:11px; letter-spacing:.18em; text-transform:uppercase; }
-    .toast { position:fixed; left:50%; bottom:max(20px,env(safe-area-inset-bottom)); z-index:5; width:max-content; max-width:90vw; padding:12px 17px; border:1px solid var(--gold); border-radius:999px; background:#151009f2; color:#ffe8ad; font-size:13px; text-align:center; box-shadow:0 10px 30px #0009; opacity:0; pointer-events:none; transform:translate(-50%,15px); transition:opacity .2s,transform .2s; }
-    .toast.show { opacity:1; transform:translate(-50%,0); }
-    @keyframes rise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
-    @media(max-width:720px) { .options { grid-template-columns:1fr; } .card { min-height:255px; } .hero { margin-top:28px; } .section-title { margin-top:32px; } }
-    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+    html { background:var(--ink); scroll-behavior:smooth; }
+    body { margin:0; color:#fff4d6; font-family:Arial,Helvetica,sans-serif; background:radial-gradient(ellipse at 50% 0%,#211507 0%,#080705 42%,#050403 100%); }
+    button,a { -webkit-tap-highlight-color:transparent; }
+    .page { position:relative; width:min(100%,853px); min-height:100vh; margin:auto; overflow:hidden; background:#080705; box-shadow:0 0 80px #000; }
+    .page::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.34; background:repeating-linear-gradient(135deg,transparent 0 52px,#986a1e12 53px,transparent 54px 106px); }
+    .page>* { position:relative; }
+    .hero { height:clamp(300px,51vw,430px); position:relative; border-bottom:1px solid #b98a30; background:radial-gradient(circle at 50% 34%,#3e270a 0%,#170f07 35%,#060604 76%); isolation:isolate; }
+    .hero::before { content:""; position:absolute; inset:0; z-index:-1; opacity:.44; background:radial-gradient(circle at 10% 24%,#eeb74555 0 2px,transparent 3px),radial-gradient(circle at 87% 30%,#efc87666 0 1px,transparent 3px),radial-gradient(circle at 60% 19%,#d7a74b44 0 2px,transparent 3px),repeating-radial-gradient(circle at 40% 15%,transparent 0 45px,#d49a2d20 46px 48px,transparent 50px 90px); }
+    .hero::after { content:""; position:absolute; left:-7%; right:-7%; bottom:-28px; height:70px; transform:rotate(-2deg); border-top:2px solid #b78328; background:linear-gradient(180deg,#100d08,#080705); clip-path:polygon(0 5%,50% 78%,100% 5%,100% 100%,0 100%); z-index:2; pointer-events:none; }
+    .back { position:absolute; top:28px; left:5%; z-index:4; display:inline-flex; align-items:center; gap:13px; color:#fff4da; text-decoration:none; font-size:clamp(11px,2.1vw,18px); font-weight:800; letter-spacing:.15em; text-shadow:0 1px 8px #000; }
+    .back .arrow { color:#f3c967; font-size:2em; font-weight:400; line-height:.5; transition:transform .2s; }
+    .back:hover .arrow { transform:translateX(-5px); }
+    .back:focus-visible,.select:focus-visible { outline:3px solid #fff4bb; outline-offset:4px; }
+    .banner-img { position:absolute; inset:80px 6% 61px; width:calc(100% - 12%); height:calc(100% - 141px); object-fit:cover; object-position:center; border:1px solid #c6963588; border-radius:22px; box-shadow:0 8px 30px #000c; z-index:1; }
+    .pfp-wrap { position:relative; z-index:3; display:grid; place-items:center; width:clamp(144px,25.5%,216px); aspect-ratio:1; margin:clamp(-128px,-14vw,-86px) auto 28px; border-radius:50%; padding:8px; background:linear-gradient(130deg,#fff0a7,#b87f20 40%,#ffd35a 70%,#865a19); box-shadow:0 0 0 1px #412b0b,0 0 35px #e2aa3a66,0 18px 30px #000a; }
+    .pfp-img { display:block; width:100%; height:100%; object-fit:cover; border-radius:50%; }
+    .content { padding:0 clamp(21px,5.5%,47px) 58px; }
+    .eyebrow,.section-title { display:flex; align-items:center; justify-content:center; gap:17px; margin:0; color:#f3cc70; font-size:clamp(12px,2.1vw,18px); font-weight:800; letter-spacing:.39em; text-align:center; }
+    .eyebrow::before,.eyebrow::after,.section-title::before,.section-title::after { content:""; height:1px; width:clamp(30px,11vw,115px); flex:none; background:linear-gradient(90deg,transparent,#f2cc67); }
+    .eyebrow::after,.section-title::after { transform:scaleX(-1); }
+    h1 { max-width:730px; margin:20px auto 24px; color:var(--pale); font:700 clamp(34px,6.7vw,68px)/1.03 Georgia,"Times New Roman",serif; letter-spacing:-.03em; text-align:center; text-shadow:0 4px 20px #d79d3e66; }
+    .quote { position:relative; margin:0 auto 30px; padding:22px 24px; border:1px solid #bc8d36; outline:1px solid #78551c; outline-offset:-7px; border-radius:12px; background:linear-gradient(100deg,#120e09,#060605 35%,#080705 65%,#130e07); color:#f5e4ba; font:italic clamp(16px,2.5vw,24px)/1.5 Georgia,"Times New Roman",serif; text-align:center; box-shadow:inset 0 0 35px #ba83251d,0 7px 22px #0007; }
+    .section-title { margin:22px 0 18px; letter-spacing:.23em; white-space:nowrap; }
+    .cards { display:grid; gap:16px; }
+    .card { position:relative; display:grid; grid-template-columns:22% 1px 1fr; align-items:center; min-height:211px; padding:20px 23px; overflow:hidden; border:1px solid #d5a640; border-radius:20px; background:radial-gradient(circle at 83% 24%,#66431a3d,transparent 38%),linear-gradient(110deg,#211608 0%,#0b0907 48%,#171008 100%); box-shadow:inset 0 0 0 2px #6e4d1c55,0 9px 24px #0009; transition:border-color .2s,box-shadow .2s,transform .2s; }
+    .card::before { content:""; position:absolute; z-index:0; width:200px; height:200px; right:-37px; top:-58px; border:1px solid #c18d2d44; border-radius:50%; box-shadow:0 0 0 24px #d69d2420,0 0 0 49px #d69d2410; pointer-events:none; }
+    .card::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(110deg,transparent 30%,#e6ac2810 60%,transparent 80%); }
+    .card:hover { transform:translateY(-3px); border-color:#ffe096; box-shadow:inset 0 0 0 2px #ac8130,0 14px 32px #000b,0 0 19px #c7922966; }
+    .duration,.details,.divider { position:relative; z-index:1; }
+    .duration { text-align:center; color:#fff0b4; text-shadow:0 3px 12px #bd7c23aa; }
+    .number { display:block; font:700 clamp(52px,10vw,104px)/.9 Georgia,serif; letter-spacing:-.05em; }
+    .unit { display:block; margin-top:11px; color:#eac365; font-size:clamp(11px,2vw,19px); font-weight:800; letter-spacing:.16em; }
+    .divider { align-self:stretch; background:linear-gradient(transparent,#dfb557 25%,#b37f2b 75%,transparent); }
+    .details { display:grid; grid-template-columns:1fr auto; align-items:end; column-gap:12px; padding-left:clamp(15px,3vw,32px); }
+    .details h2 { grid-column:1/-1; margin:0 0 11px; color:#ffe3a0; font-size:clamp(17px,2.7vw,24px); line-height:1.1; font-weight:800; letter-spacing:.06em; }
+    .details p { max-width:270px; margin:0; color:#c9c0ae; font-size:clamp(11px,1.8vw,16px); line-height:1.45; }
+    .select { display:inline-flex; align-items:center; justify-content:center; gap:14px; min-width:210px; padding:12px 15px; border:1px solid #f9ca5b; border-radius:999px; color:#ffdf85; background:linear-gradient(180deg,#261c0b,#080706); box-shadow:inset 0 1px #ffe2a540,0 0 14px #d69b3144; font-size:clamp(11px,1.8vw,16px); font-weight:800; letter-spacing:.11em; text-align:center; text-decoration:none; white-space:nowrap; transition:background .2s,transform .2s; }
+    .select:hover { background:#38280e; transform:translateX(3px); }
+    .select span { font-size:1.6em; line-height:.7; }
+    footer { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:38px; color:#d6a13d; font-size:clamp(11px,2vw,16px); font-weight:700; letter-spacing:.43em; text-align:center; }
+    footer::before,footer::after { content:""; height:1px; width:15%; background:linear-gradient(90deg,transparent,#dbb253); }
+    footer::after { transform:scaleX(-1); }
+    .toast { position:fixed; z-index:10; left:50%; bottom:max(20px,env(safe-area-inset-bottom)); width:max-content; max-width:90vw; padding:12px 18px; transform:translate(-50%,15px); opacity:0; pointer-events:none; border:1px solid #d6a645; border-radius:999px; background:#100d08f2; color:#ffe8ac; box-shadow:0 10px 30px #000b; font-size:13px; text-align:center; transition:opacity .2s,transform .2s; }
+    .toast.visible { opacity:1; transform:translate(-50%,0); }
+    @media(max-width:650px) {
+      .hero { height:330px; }
+      .banner-img { top:69px; bottom:48px; height:calc(100% - 117px); }
+      .pfp-wrap { margin-top:-94px; }
+      .card { grid-template-columns:25% 1px 1fr; min-height:230px; padding:18px 14px; border-radius:15px; }
+      .details { display:block; padding-left:16px; }
+      .details p { margin-bottom:13px; }
+      .select { min-width:0; width:100%; padding:10px 8px; gap:7px; }
+      .eyebrow { letter-spacing:.2em; }
+    }
+    @media(max-width:380px) { .card { grid-template-columns:27% 1px 1fr; } .details h2 { font-size:16px; } .select { font-size:10px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .card,.select,.back .arrow,.toast { transition:none; } }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <nav class="topbar" aria-label="Page navigation">
-      <a class="back" href="index.html" aria-label="Back to GØKÛ profile"><span aria-hidden="true">←</span> Back to profile</a>
-    </nav>
+  <main class="page">
     <header class="hero">
-      <img src="assets/gc_logo.png" alt="Grand Champion Sideswipe Logo" class="gc-hero-logo">
-      <p class="eyebrow">Grand Champion Coaching</p>
-      <h1>Private coaching with GØKÛ.</h1>
-      <blockquote class="hero-quote">“What you master today becomes the standard the next generation chases.”</blockquote>
+      <a class="back" href="index.html"><span class="arrow" aria-hidden="true">‹</span> BACK TO PROFILE</a>
+      <img src="assets/banner.png" alt="GØKÛ Profile Banner" class="banner-img" loading="eager">
     </header>
-    <div class="section-title">Choose your session</div>
-    <section class="options" aria-label="Coaching durations">
-      <article class="card">
-        <div class="number">01</div><div class="unit">Hour</div><div class="rule"></div>
-        <h2>1 hour coaching</h2>
-        <div class="price-tag">$12.50</div>
-        <p>One private session focused on your game.</p>
-        <a class="checkout" href="https://buy.stripe.com/00w6oI4WP5GP0qVeIX0RG00" data-plan="one" target="_blank" rel="noopener noreferrer" aria-label="Pay $12.50 for 1 hour coaching through Stripe"><span>Choose 1 hour · $12.50</span><span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="card">
-        <div class="number">02</div><div class="unit">Hours</div><div class="rule"></div>
-        <h2>2 hour coaching</h2>
-        <div class="price-tag">$22.49</div>
-        <p>More time to work through your gameplay.</p>
-        <a class="checkout" href="https://buy.stripe.com/4gM00kfBt7OXgpT58n0RG01" data-plan="two" target="_blank" rel="noopener noreferrer" aria-label="Pay $22.49 for 2 hour coaching through Stripe"><span>Choose 2 hours · $22.49</span><span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="card">
-        <div class="number">04</div><div class="unit">Hours</div><div class="rule"></div>
-        <h2>4 hour coaching</h2>
-        <div class="price-tag">$61.99</div>
-        <p>An extended private coaching block.</p>
-        <a class="checkout" href="https://buy.stripe.com/3cIeVe1KDd9hb5z7gv0RG02" data-plan="four" target="_blank" rel="noopener noreferrer" aria-label="Pay $61.99 for 4 hour coaching through Stripe"><span>Choose 4 hours · $61.99</span><span aria-hidden="true">↗</span></a>
-      </article>
-    </section>
-    <footer>I AM INEVITABLE 👑</footer>
+    <div class="pfp-wrap">
+      <img src="assets/pfp.png" alt="GØKÛ profile photo" class="pfp-img" loading="eager">
+    </div>
+    <div class="content">
+      <p class="eyebrow">PRIVATE COACHING</p>
+      <h1>PRIVATE COACHING</h1>
+      <blockquote class="quote">“What you master today becomes the standard the next generation chases.”</blockquote>
+      <h2 class="section-title">CHOOSE YOUR SESSION</h2>
+      <section class="cards" aria-label="Coaching session choices">
+        <article class="card">
+          <div class="duration"><span class="number">01</span><span class="unit">HOUR</span></div><div class="divider" aria-hidden="true"></div>
+          <div class="details"><h2>FOCUSED SESSION · $12.50</h2><p>Target your key areas and get focused feedback.</p><a class="select" href="https://buy.stripe.com/00w6oI4WP5GP0qVeIX0RG00" data-plan="one" target="_blank" rel="noopener noreferrer" aria-label="Choose one hour coaching for $12.50">CHOOSE SESSION <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="card">
+          <div class="duration"><span class="number">02</span><span class="unit">HOURS</span></div><div class="divider" aria-hidden="true"></div>
+          <div class="details"><h2>DEEPER TRAINING · $22.49</h2><p>More time to refine your mechanics and decisions.</p><a class="select" href="https://buy.stripe.com/4gM00kfBt7OXgpT58n0RG01" data-plan="two" target="_blank" rel="noopener noreferrer" aria-label="Choose two hours coaching for $22.49">CHOOSE SESSION <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="card">
+          <div class="duration"><span class="number">04</span><span class="unit">HOURS</span></div><div class="divider" aria-hidden="true"></div>
+          <div class="details"><h2>FULL DEVELOPMENT · $61.99</h2><p>An extended session tailored to your goals.</p><a class="select" href="https://buy.stripe.com/3cIeVe1KDd9hb5z7gv0RG02" data-plan="four" target="_blank" rel="noopener noreferrer" aria-label="Choose four hours coaching for $61.99">CHOOSE SESSION <span aria-hidden="true">→</span></a></div>
+        </article>
+      </section>
+      <footer>I AM INEVITABLE 👑</footer>
+    </div>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script>
-    /* Stripe Product & Price IDs */
-    const STRIPE_PRODUCTS = {
-      one: {
-        product: 'prod_VLhZfoFlZ1LICR',
-        price: 'price_1UL0A4LT9eq3MSAdx7kL9qja',
-        amount: '$12.50'
-      },
-      two: {
-        product: 'prod_VLhaqHtnWa3Wtk',
-        price: 'price_1UL0B8LT9eq3MSAdGDhxAHrF',
-        amount: '$22.49'
-      },
-      four: {
-        product: 'prod_VLhcmL2MFksYkM',
-        price: 'price_1UL0CvLT9eq3MSAdlEDM1SIK',
-        amount: '$61.99'
-      }
-    };
-
-    /* Paste the 3 public Stripe Payment Link URLs (buy.stripe.com) here */
+    /* STRIPE PAYMENT LINKS */
     const PAYMENT_LINKS = {
-      one: 'https://buy.stripe.com/00w6oI4WP5GP0qVeIX0RG00',   // 1 hour ($12.50) -> https://buy.stripe.com/...
-      two: 'https://buy.stripe.com/4gM00kfBt7OXgpT58n0RG01',   // 2 hours ($22.49) -> https://buy.stripe.com/...
-      four: 'https://buy.stripe.com/3cIeVe1KDd9hb5z7gv0RG02'   // 4 hours ($61.99) -> https://buy.stripe.com/...
+      one: 'https://buy.stripe.com/00w6oI4WP5GP0qVeIX0RG00',  // 01 hour checkout URL ($12.50)
+      two: 'https://buy.stripe.com/4gM00kfBt7OXgpT58n0RG01',  // 02 hours checkout URL ($22.49)
+      four: 'https://buy.stripe.com/3cIeVe1KDd9hb5z7gv0RG02'  // 04 hours checkout URL ($61.99)
     };
-
     const toast = document.getElementById('toast');
     let toastTimer;
-    function notify(message) {
+    function notice(message) {
       clearTimeout(toastTimer);
       toast.textContent = message;
-      toast.classList.add('show');
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 3800);
+      toast.classList.add('visible');
+      toastTimer = setTimeout(() => toast.classList.remove('visible'), 3000);
     }
     document.querySelectorAll('[data-plan]').forEach(button => {
       button.addEventListener('click', event => {
-        const plan = button.dataset.plan;
-        const url = PAYMENT_LINKS[plan]?.trim();
-        if (!url) {
-          event.preventDefault();
-          notify(`Stripe checkout for ${STRIPE_PRODUCTS[plan].amount} coming soon 👑`);
-          return;
-        }
-        if (url.includes('dashboard.stripe.com')) {
-          event.preventDefault();
-          notify('Please use the public buy.stripe.com payment link, not the dashboard link 👑');
-          return;
-        }
+        const url = PAYMENT_LINKS[button.dataset.plan]?.trim();
+        if (!url) { event.preventDefault(); notice('Checkout link coming soon 👑'); return; }
         try {
           const target = new URL(url);
-          if (target.protocol !== 'https:' || !/^(buy|checkout)\.stripe\.com$/.test(target.hostname)) {
-            throw new Error('Invalid Stripe link');
-          }
+          if (target.protocol !== 'https:' || !/^(buy|checkout)\.stripe\.com$/.test(target.hostname)) throw new Error('Invalid Stripe URL');
           button.href = target.href;
-        } catch (_) {
-          event.preventDefault();
-          notify('Check this Stripe link in coaching.html.');
-        }
+        } catch (_) { event.preventDefault(); notice('Check the Stripe link in the code.'); }
       });
     });
   </script>
