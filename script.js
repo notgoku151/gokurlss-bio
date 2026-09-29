@@ -109,7 +109,7 @@ function initDiscordCopy() {
       }, 350);
     } else {
       setTimeout(() => {
-        window.open('https://discord.com/app', '_blank', 'noopener,noreferrer');
+        window.open('https://discord.com/users/1186998666725175358', '_blank', 'noopener,noreferrer');
       }, 250);
     }
   }
