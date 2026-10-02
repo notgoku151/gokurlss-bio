@@ -37,6 +37,14 @@
     .light-sweep { position: absolute; pointer-events: none; inset: 0; background: linear-gradient(112deg, transparent 33%, rgba(255,212,115,.065) 49%, transparent 64%); background-size: 230% 100%; animation: sweep 9s ease-in-out 1.2s infinite; mix-blend-mode: screen; }
     @keyframes sweep { 0%, 75%, 100% { background-position: 100% 0; } 87% { background-position: -100% 0; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .light-sweep { animation: none; } .action, .status { transition: none; } }
+    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(5px); }
+    .modal-overlay.active { display: flex; animation: fadeIn 0.2s ease-out; }
+    .modal-content { background: var(--black); border: 1px solid var(--gold); padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .modal-content h3 { margin: 0 0 20px 0; color: var(--gold); font-size: 1.2rem; }
+    .modal-buttons { display: flex; gap: 15px; justify-content: center; }
+    .modal-buttons button { background: transparent; color: #fff; border: 1px solid var(--gold); padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: all 0.2s; }
+    .modal-buttons button:hover { background: var(--gold); color: var(--black); }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   </style>
 </head>
 <body>
@@ -57,7 +65,19 @@
     <a class="action last-second" href="https://www.tiktok.com/@gokurlss/video/7686960743492619542?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" data-clip="theFake" aria-label="Watch clip: THE FAKE"></a>
   </main>
   <div class="status" id="status" role="status" aria-live="polite"></div>
+  <div id="clutchModal" class="modal-overlay">
+    <div class="modal-content">
+      <h3>Video not live yet</h3>
+      <div class="modal-buttons">
+        <button onclick="closeModal()">Okay</button>
+        <button onclick="closeModal()">I'll wait</button>
+      </div>
+    </div>
+  </div>
   <script>
+    function closeModal() {
+      document.getElementById('clutchModal').classList.remove('active');
+    }
     /* Exact public URLs */
     const SOCIAL_URLS = {
       instagram: 'https://www.instagram.com/gokurlss/',
@@ -109,7 +129,11 @@
         const url = category === 'link' ? SOCIAL_URLS[key] : CLIP_URLS[key];
         if (!url) {
           event.preventDefault();
-          notice(category === 'clip' ? 'Clip coming soon 👑' : 'Link coming soon 👑');
+          if (key === 'featured') {
+            document.getElementById('clutchModal').classList.add('active');
+          } else {
+            notice(category === 'clip' ? 'Clip coming soon 👑' : 'Link coming soon 👑');
+          }
           return;
         }
         try {
