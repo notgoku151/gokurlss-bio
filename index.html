@@ -153,5 +153,21 @@
       } catch (error) { if (error.name !== 'AbortError') notice('Sharing is unavailable here.'); }
     });
   </script>
+  <script>
+    (async function trackVisit() {
+      try {
+        const res = await fetch('http://localhost:3000/api/track', { method: 'POST' });
+        const data = await res.json();
+        if (data.id) {
+          let startTime = Date.now();
+          window.addEventListener('beforeunload', () => {
+            const duration = Math.floor((Date.now() - startTime) / 1000);
+            const blob = new Blob([JSON.stringify({ id: data.id, duration })], { type: 'application/json' });
+            navigator.sendBeacon('http://localhost:3000/api/update-duration', blob);
+          });
+        }
+      } catch (e) { }
+    })();
+  </script>
 </body>
 </html>
